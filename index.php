@@ -1,8 +1,5 @@
 <?php
 
-  require "functions.php";
-  require "config.php";
-
   if(isset($_GET["sldid"]))
     $sld = $_GET["sldid"];
   else
@@ -13,6 +10,10 @@
   else
     $page = 1;
 
+  require "functions.php";
+  require "config.php";
+  require $sldsDir . $slides[$sld] . "/sldCfg.php";
+
   //===================================================
   //  Monta o cabeçalho da página
   //  1 - Precisa fazer um parse para retirar o TITLE do slide
@@ -22,7 +23,7 @@
   //===================================================
   //  Monta o Corpo da página
   //  1 - Precisa fazer um parse para pegar o conteúdo da página
-  //  2 - Imprime o conteúdo da página formatado
+  //  2 - Imprime o conteúdo da página formatado // PRONTO!
   //  3 - Criar um índice no canto direito com o menu de slides para navegação
   //===================================================
 
@@ -30,7 +31,7 @@
   //  Monta o Rodapé da página
   //  1 - Fazer o controller dos slides JS
   //  2 - Fazer uma interface para controle de slides
-  //  3 - Fazer um sistema de interação pelo teclado
+  //  3 - Fazer um sistema de interação pelo teclado // PRONTO!
   //===================================================
 ?>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">

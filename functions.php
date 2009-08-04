@@ -17,7 +17,16 @@
 
   function setNPPage($actPage)
   {
-    $code = "<script type=\"text/javascript\" language=\"JavaScript\">var nPage=" . ($actPage + 1) . ";var pPage=" . ($actPage - 1) . ";</script>\n";
+    if(($actPage + 1) > SLDMAX) 
+      $nPage = 1; 
+    else
+      $nPage = $actPage + 1;
+
+    if(($actPage - 1) < 1) 
+      $pPage = SLDMAX; 
+    else
+      $pPage = $actPage - 1; 
+	$code = "<script type=\"text/javascript\" language=\"JavaScript\">var nPage=" . $nPage . ";var pPage=" . $pPage . ";</script>\n";
 	echo $code;
   }
 
