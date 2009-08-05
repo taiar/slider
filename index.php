@@ -34,9 +34,7 @@
   //  3 - Fazer um sistema de interação pelo teclado // PRONTO!
   //===================================================
 ?>
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-<?=setNPPage($page);?>
-<?=setAllJs();?>
+<?=getHeaders($page);?>
 <body onload="init();">
 <?=parseGetBody(getSrc($sldsDir . $slides[$sld] . "/" . $page . ".html"));?>
 <?=getSlideController();?>

@@ -11,7 +11,7 @@
 
 	$s = count($js);
 	for($i = 0; $i < $s; $i += 1)
-      $code .= "<script type=\"text/javascript\" language=\"JavaScript\" src=\"" . $jsDir . $js[$i] . "\"></script>\n";
+      $code .= "<script type=\"text/javascript\" language=\"JavaScript\" src=\"" . $jsDir . $js[$i] . "\"></script>\n  ";
 	return $code;
   }
 
@@ -29,6 +29,14 @@
 	$code = "<script type=\"text/javascript\" language=\"JavaScript\">var nPage=" . $nPage . ";var pPage=" . $pPage . ";</script>\n";
 	echo $code;
   }
+
+  function getHeaders($page)
+  {?>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <?=setNPPage($page);?>
+    <?=setAllJs();?>
+  <?}
 
   function parseGetBody($code)
   {
