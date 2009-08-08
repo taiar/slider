@@ -1,24 +1,57 @@
 *{ font-family: Arial; }
-body{
-	background-color:#C0DEB4;
+
+body
+{
+  background-color:#C0DEB4;
 }
-h1{
-	color:#292929;
+
+h1
+{
+  color:#292929;
 }
-h2 {
-	font-family: Verdana;
-	color:#679E42;
-	}
-h3{
-	color:#548136;
-	font-size:24px;
+
+h2
+{
+  font-family: Verdana;
+  color:#679E42;
 }
-p{
-	font-size:20px;
-	color:#FFF;
+
+h3
+{
+  color:#548136;
+  font-size:24px;
 }
-li{
-	list-style-type:disc;
-	font-size:20px;
-	color:#FFF;
+p
+{
+  font-size:20px;
+  color:#FFF;
+}
+
+li
+{
+  list-style-type:disc;
+  font-size:20px;
+  color:#FFF;
+}
+
+.dTable
+{
+  width: 100%;
+}
+
+.dTable thead th
+{
+  color: white;
+  background-color: #679E42;
+}
+
+.dTable tbody tr td
+{
+  background-color: #FFFFFF;
+  font-size: 11pt;
+}
+
+.center
+{
+  text-align: center;
 }
