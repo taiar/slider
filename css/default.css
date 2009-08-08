@@ -1,1 +1,24 @@
 *{ font-family: Arial; }
+body{
+	background-color:#C0DEB4;
+}
+h1{
+	color:#292929;
+}
+h2 {
+	font-family: Verdana;
+	color:#679E42;
+	}
+h3{
+	color:#548136;
+	font-size:24px;
+}
+p{
+	font-size:20px;
+	color:#FFF;
+}
+li{
+	list-style-type:disc;
+	font-size:20px;
+	color:#FFF;
+}
