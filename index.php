@@ -10,9 +10,16 @@
   else
     $page = 1;
 
-  require "functions.php";
-  require "config.php";
-  require $sldsDir . $slides[$sld] . "/sldCfg.php";
+  if(isset($_GET["vv"]))
+    $vv = $_GET["vv"];
+  else
+    $vv = 1;
+
+  require "slider.class.php";
+
+  $slide = new slider($sld, $page, $vv);
+  require($slide->getSldCfg());
+  // require($slide->getSldMenuArq());
 
   //===================================================
   //  Monta o cabeçalho da página
@@ -33,8 +40,18 @@
   //  2 - Fazer uma interface para controle de slides
   //  3 - Fazer um sistema de interação pelo teclado // PRONTO!
   //===================================================
+
+  $slide->getHeaders();
+  $sldContents = $slide->parseGetBody($slide->getSrc($slide->getSldDir() . $slide->getSldPage() . ".html"));
+  ereg("\<h1\>(.*)\<\/h1\>", $sldContents, $reg);
 ?>
-<?=getHeaders($page);?>
-<body onload="init();">
-<?=parseGetBody(getSrc($sldsDir . $slides[$sld] . "/" . $page . ".html"));?>
-<?=getSlideController();?>
+  <body onload="init();">
+  <?=$reg[0];?>
+  <div id="sldContent">
+  <?
+    $sldContents = ereg_replace("\<h1\>(.*)\<\/h1\>", "", $sldContents);
+    echo $sldContents;
+  ?>
+  </div>
+  <?=$slide->getMenu();?>
+  <? $slide->getSlideController(); ?>

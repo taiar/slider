@@ -2,24 +2,27 @@
 
 body
 {
-  background-color:#C0DEB4;
+  background-color:#82B07B;
 }
 
 h1
 {
+  margin: 25px;
+  text-align: center;
   color:#292929;
+  font-size: 20pt;
 }
 
 h2
 {
   font-family: Verdana;
-  color:#679E42;
+  color:#30660F;
 }
 
 h3
 {
-  color:#548136;
-  font-size:24px;
+  color:#30660F;
+  font-size:24;
 }
 p
 {
@@ -54,4 +57,90 @@ li
 .center
 {
   text-align: center;
+}
+
+.dTable thead th.trans
+{
+  background-color: transparent;
+}
+
+#sldController
+{
+  position: relative;
+  float: left;
+}
+
+#sldContent
+{
+  position: relative;
+  float: left;
+  width: 75%;
+}
+
+#sldMenu
+{
+  border: 1px solid #999;
+  position: relative;
+  float: left;
+  width: 24%;
+  background-color: white;
+  margin-left: 10px;
+}
+
+#sldMenu ul
+{
+  margin: 0px;
+  padding: 0 5px 0 20px;
+}
+
+#sldMenu ul li
+{
+  color:#679E42;
+  list-style-type: circle;
+  line-height: 15px;
+  margin: 9px 0;
+}
+
+#sldMenu ul li a
+{
+  text-decoration: none;
+  color:#679E42;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#sldMenu ul li a:hover
+{
+  color:#FFFFFF;
+  background-color: #000000;
+}
+
+div#sldMenu ul li a.onnn
+{
+  color: #FFFFFF;
+  background-color: #000000;
+}
+
+#sldController
+{
+  border: 1px solid #999;
+  background-color: white;
+  padding: 5px;
+  position: fixed;
+	bottom: 0;
+	right: 50%;
+	margin-right: -50px;
+}
+
+#sldController a
+{
+  color:#679E42;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#sldController a:hover
+{
+  color: #FFFFFF;
+  background-color: #000000;
 }

@@ -16,27 +16,30 @@ var index = 0;
 
 function init()
 {
-  $("div").css({"visibility" : "hidden"});
+  if(vv == 1)
+    $("div").css({"visibility" : "hidden"});
+  $("#sldMenu").css({"visibility" : "visible"});
+  $("#sldContent").css({"visibility" : "visible"});
+  $("#sldController").css({"visibility" : "visible"});
 }
 function next()
 {
   if($("#" + celulas[index]).length > 0)
   {
-    $("#" + celulas[index]).css({"visibility":"visible"});
-    index += 1;
+    if(vv != 0)
+    {
+      $("#" + celulas[index]).css({"visibility":"visible"});
+      index += 1;
+    }
+    else
+      window.location = './?sldno=' + nPage + '&vv=' + 1;
   }
   else
-    window.location = './?sldno=' + nPage;
+    window.location = './?sldno=' + nPage + '&vv=' + 1;
 }
 function prev()
 {
-  if($("#" + celulas[index]).length > 0)
-  {
-    $("#" + celulas[index]).css({"visibility":"visible"});
-    index += 1;
-  }
-  else
-    window.location = './?sldno=' + pPage;
+    window.location = './?sldno=' + pPage + '&vv=' + 0;
 }
 
 function checkKeycode(e) {
