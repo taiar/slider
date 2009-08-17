@@ -4,13 +4,13 @@
   {
 
     /**
-     * Cada slide terá um ID unico esse array relaciona o id unico com a pasta de cada um
+     * Cada slide terÃ¡ um ID unico esse array relaciona o id unico com a pasta de cada um
      * @var Array
      */
     private $slides;
 
     /**
-     * Diretório aonde se encontram os slides
+     * DiretÃ³rio aonde se encontram os slides
      * @var string
      */
     private $sldsDir;
@@ -109,11 +109,11 @@
     public function setNPPage()
     {
       if(($this->page + 1) > SLDMAX)
-        $nPage = 1;
+        $nPage = 0;
       else
         $nPage = $this->page + 1;
 
-      if(($this->page - 1) < 1)
+      if(($this->page - 1) < 0)
         $pPage = SLDMAX;
       else
         $pPage = $this->page - 1;
@@ -194,7 +194,6 @@
         $tArr[] = str_replace("  ", " ", str_replace("  ", " ", str_replace("\t", " ", trim(str_replace("\r\n", "", strip_tags(utf8_encode($reg[0])))))));
       }
 
-      echo print_r($tArr);
       $f = fopen($this->getSldDir() . $this->menuArq, "w");
 
       for($i=0;$i<SLDMAX;$i+=1)

@@ -17,10 +17,11 @@ var index = 0;
 function init()
 {
   if(vv == 1)
-    $("div").css({"visibility" : "hidden"});
-  $("#sldMenu").css({"visibility" : "visible"});
-  $("#sldContent").css({"visibility" : "visible"});
-  $("#sldController").css({"visibility" : "visible"});
+    $("div").css({"display" : "none"});
+  $("#sldMenu").css({"display" : "inline"});
+  $("#sldContent").css({"display" : "inline"});
+  $("#sldController").css({"display" : "inline"});
+  $("#sldContent").css({"height" : "560px"});
 }
 function next()
 {
@@ -28,7 +29,7 @@ function next()
   {
     if(vv != 0)
     {
-      $("#" + celulas[index]).css({"visibility":"visible"});
+      $("#" + celulas[index]).fadeIn('slow');
       index += 1;
     }
     else
@@ -53,3 +54,4 @@ function checkKeycode(e) {
   else if(keycode == 39)
     next();
 }
+
